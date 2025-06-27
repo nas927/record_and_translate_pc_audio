@@ -1,0 +1,4 @@
+googletrans==4.0.2
+openai-whisper==20250625
+soundfile==0.13.1
+sounddevice==0.5.2
