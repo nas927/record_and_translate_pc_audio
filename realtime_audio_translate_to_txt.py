@@ -1,5 +1,6 @@
 # Traduction audio en temps réel depuis la sortie audio/micro et écriture dans un fichier texte
 # Nécessite : sounddevice, numpy, openai-whisper, googletrans==4.0.0-rc1, torch
+# python 3.12.0
 
 import sounddevice as sd
 import soundfile as sf
