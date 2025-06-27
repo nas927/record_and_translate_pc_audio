@@ -79,6 +79,7 @@ class RealTimeAudioTranscriber:
 
     async def test(self) -> None:
         # Nom de l'audio pour les testes du modèle
+        print(sd.query_devices())
         filename: str = "test.wav"
         data, samplerate = sf.read(filename)
         sd.play(data, samplerate)
@@ -90,7 +91,7 @@ class RealTimeAudioTranscriber:
 
 if __name__ == '__main__':
     transcriber = RealTimeAudioTranscriber(
-        device=12,          # À adapter selon ton périphérique cherche wasapi sd.querydevice()
+        device=14,          # À adapter selon ton périphérique cherche wasapi sd.query_devices()
         channels=2,         # 1 Pour Mono et 2 pour stéréo le mieux reste stéréo
         samplerate=48000,   # A voir en fonction de ce que supporte wasapi sd.querydevice(device numéro)
         blocksize=2048,     # taille de chaque échantillon
@@ -101,4 +102,4 @@ if __name__ == '__main__':
     )
     asyncio.run(transcriber.run())
     # Pour les testes
-    # asyncio.run(transcriber.test())
+    #asyncio.run(transcriber.test())
